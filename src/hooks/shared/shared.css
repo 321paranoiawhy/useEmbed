@@ -1,0 +1,58 @@
+details {
+  /* border: 1px solid #448aff; */
+  margin: 1rem 0;
+  /*   Unfortunately, at this time there's no built-in way to animate the transition between open and closed. */
+  /*   transition: all 0.3s; */
+}
+
+details[open] > summary:after {
+  transform: rotate(90deg);
+}
+
+summary {
+  border: 1px solid #448aff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: none;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  color: #448aff;
+  user-select: none;
+  background-color: #448aff1a;
+  padding-left: 50px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.gist .gist-file {
+    border: 1px solid #448aff !important;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  background-image: url("https://api.iconify.design/octicon:logo-gist-16.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.25s;
+}
+summary::after {
+  position: absolute;
+  right: 10px;
+  content: " ";
+  background-image: url("https://api.iconify.design/mdi:chevron-right.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.25s;
+}
